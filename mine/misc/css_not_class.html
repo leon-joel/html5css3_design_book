@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>疑似否定クラス not</title>
+
+  <!-- 参考: https://www.softel.co.jp/blogs/tech/archives/5161 -->
+  <style>
+    #demo20151110 {border:1px solid #ccc; padding:1em;}
+
+    /* p要素 && hogeクラスを持たない要素 ⇒ 1と4 */
+    #demo20151110 p:not(.hoge) { color: red; }
+
+    /* classを持たないp要素 ⇒ 4のみ */
+    #demo20151110 p:not([class]) { color: blue; }
+
+    /* p要素以外 ⇒ 3のみ */
+    #demo20151110 :not(p) { color: green; }
+
+    /* fugaで始まるクラスを持たない要素 ⇒ 2と4 */
+    #demo20151110 :not([class^="fuga"]) {
+      border-style: solid;
+      border-width: thin;
+    }
+  </style>
+</head>
+<body>
+
+<div id="demo20151110">
+  <p class="fuga">class="fuga" のP要素 → p:not(.hoge) にマッチ</p>
+  <p class="hoge">class="hoge" のP要素 → どれにもマッチしない</p>
+  <div class="fugaruno">P要素ではない → :not(p) にマッチ</div>
+  <p>class属性のない素のP要素 → p:not(.hoge) と p:not([class]) にマッチ</p>
+</div>
+
+</body>
