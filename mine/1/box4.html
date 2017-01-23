@@ -22,9 +22,10 @@
     /* overflow:hiddenでもclearfixとほぼ同じ結果になる。但し、子要素が親要素をはみ出した場合trimされる*/
     /*.boxA { overflow: hidden; }*/
 
-    /* 両方floatにしたので、親のBoxAの高さが0になる*/
-    .box2 { float: left;}
-    .box3 { float: left;}
+    /* 両方floatにしたので、親のBoxAの高さが0になる -> clearfixにより親がスッポリ覆うようになる*/
+    /* width:50%により、横に均等に並ぶ ※横幅が狭い場合はテキストがはみ出す。overflow:hiddenにすればtrimされる*/
+    .box2 { float: left; width: 50%; }
+    .box3 { float: left; width: 50%; }
   </style>
 </head>
 <body>
