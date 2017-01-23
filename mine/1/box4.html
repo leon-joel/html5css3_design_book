@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ページタイトル</title>
+  <link rel="stylesheet" href="../../sample/1/grid-guide.css">
+  <style>
+    .boxA {
+      border-width: thick;
+      border-style: dotted;
+      border-color: #83a4a8;
+    }
+
+    /* 両方floatにしたので、親のBoxAの高さが0になる*/
+    .box2 { float: left;}
+    .box3 { float: left;}
+  </style>
+</head>
+<body>
+
+<div class="box1">BOX1</div>
+<div class="boxA">
+  <div class="box2">BOX2</div>
+  <div class="box3">BOX3</div>
+</div>
+
+<!-- box2, box3の段に単語が入りきらない場合は下の段に繰り下がる-->
+<div class="box4">BOX4 SUF</div>
+
+<!-- 何もスタイルが適用されないdiv要素: 幅は画面一杯、高さはcontentsにfit ※テキストなしだと高さは0に-->
+<div class="test">text</div>
+
+</body>
+</html>
