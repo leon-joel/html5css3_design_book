@@ -23,7 +23,10 @@
     /*.boxA { overflow: hidden; }*/
 
     /* 両方floatにしたので、親のBoxAの高さが0になる -> clearfixにより親がスッポリ覆うようになる*/
-    /* width:50%により、横に均等に並ぶ ※横幅が狭い場合はテキストがはみ出す。overflow:hiddenにすればtrimされる*/
+    /* width:50%により、横に均等に並ぶ ※こうした場合親のboxAがなくても結果は同じになる */
+    /* ※横幅が狭い場合はテキストがはみ出す。overflow:hiddenにすればtrimされる */
+    /*.box2 { float: left; }*/
+    /*.box3 { float: left; }*/
     .box2 { float: left; width: 50%; }
     .box3 { float: left; width: 50%; }
   </style>
