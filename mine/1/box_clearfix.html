@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>1-2 ボックスを横に並べる - clearfixの仕組み</title>
+  <link rel="stylesheet" href="../../sample/1/grid-guide.css">
+  <style>
+    .boxA {
+      border-width: thick;
+      border-style: dotted;
+      border-color: #83a4a8;
+      background-color: #a0e0fe;
+      color: #00a0e9;
+    }
+    /* clearfixというテクニック ※歴史的説明: http://kojika17.com/2013/06/clearfix-2013.html*/
+    /* 子要素をスッポリ覆うようなレイアウトとなるため、 後続の要素が回り込んでこなくなる */
+    .boxA:after {
+      content: "これはboxAの中に表示確認のために挿入したテキストです。";
+      display: block;
+      clear: both;
+      /* rightにした場合右側には回り込ませないという意味。bothはどちらにも回り込ませないという意味。*/
+      /* clearはblock要素に対してのみ有効のようだ */
+    }
+
+    /* overflow:hiddenでもclearfixとほぼ同じ結果になる。但し、子要素が親要素をはみ出した場合trimされる。またIE6,7ではoverflowは使えないらしい。参考: https://www.halawata.net/2011/10/css-float-display-box/*/
+    /*.boxA { overflow: hidden; }*/
+
+    /* 両方floatにしたので、親のBoxAの高さが0になる -> clearfixにより親がスッポリ覆うようになる*/
+    /* ※横幅が狭い場合はテキストがはみ出す。overflow:hiddenにすればtrimされる */
+    .box2 { float: left; }
+    .box3 { float: left; }
+
+    /*.box1 { float: left; }*/
+    /* 3個均等配置*/
+    /*.box2, .box3, .box4 { float: left; width: 33.3333%; }*/
+  </style>
+</head>
+
+<body>
+
+<div class="box1">BOX1</div>
+<div class="boxA">
+  <div class="box2">BOX2</div>
+  <div class="box3">BOX3</div>
+</div>
+<!-- テキストが入りきらないとBoxが縦に広がって2行になる -->
+<div class="box4">BOX4 SUF</div>
+
+<!-- 何もスタイルが適用されないdiv要素: 幅は画面一杯、高さはcontentsにfit ※テキストなしだと高さは0に-->
+<!-- ※テキストがBox横幅-->
+<div class="test" >texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext </div>
+
+
+</body>
