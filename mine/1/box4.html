@@ -11,6 +11,16 @@
       border-style: dotted;
       border-color: #83a4a8;
     }
+    /* clearfixというテクニック*/
+    /* 子要素をスッポリ覆うようなレイアウトとなるため、 後続の要素が回り込んでこなくなる */
+    .boxA:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* overflow:hiddenでもclearfixとほぼ同じ結果になる。但し、子要素が親要素をはみ出した場合trimされる*/
+    /*.boxA { overflow: hidden; }*/
 
     /* 両方floatにしたので、親のBoxAの高さが0になる*/
     .box2 { float: left;}
@@ -25,11 +35,11 @@
   <div class="box3">BOX3</div>
 </div>
 
-<!-- box2, box3の段に単語が入りきらない場合は下の段に繰り下がる-->
+<!-- boxAがbox2,3をスッポリ覆っているので、box2,3の後ろに回り込まないようになる-->
 <div class="box4">BOX4 SUF</div>
 
 <!-- 何もスタイルが適用されないdiv要素: 幅は画面一杯、高さはcontentsにfit ※テキストなしだと高さは0に-->
-<div class="test">text</div>
+<div class="test" style="float: left;">text</div>
 
 </body>
 </html>
