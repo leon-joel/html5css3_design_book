@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <title>1-2 ボックスを横に並べる</title>
+  <title>1-2 ボックスを横に並べる - 横に並べるボックスを変更する</title>
   <link rel="stylesheet" href="../../sample/1/grid-guide.css">
   <style>
     .boxA {
@@ -27,23 +27,31 @@
     /* ※横幅が狭い場合はテキストがはみ出す。overflow:hiddenにすればtrimされる */
     /*.box2 { float: left; }*/
     /*.box3 { float: left; }*/
-    .box2 { float: left; width: 50%; }
-    .box3 { float: left; width: 50%; }
+
+    /* スタイルシートの設定をまとめた */
+    .box1, .box2, .box3, .box4 { float: left; width: 50%; }
+
   </style>
 </head>
+
 <body>
 
-<div class="box1">BOX1</div>
+<!-- 2個横並びを2段に -->
+
 <div class="boxA">
+  <div class="box1">BOX1</div>
   <div class="box2">BOX2</div>
-  <div class="box3">BOX3</div>
 </div>
 
-<!-- boxAがbox2,3をスッポリ覆っているので、box2,3の後ろに回り込まないようになる-->
-<div class="box4">BOX4 SUF</div>
+<div class="boxA">
+  <div class="box3">BOX3</div>
+  <!-- テキストが入りきらないとBoxが縦に広がって2行になる -->
+  <div class="box4">BOX4 SUF</div>
+</div>
 
 <!-- 何もスタイルが適用されないdiv要素: 幅は画面一杯、高さはcontentsにfit ※テキストなしだと高さは0に-->
-<div class="test" style="float: left;">text</div>
+<!-- ※テキストがBox横幅-->
+<div class="test" style="float: left;">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext </div>
+
 
 </body>
-</html>

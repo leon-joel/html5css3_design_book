@@ -3,8 +3,7 @@
 /* グリッドガイド */
 
 [class^="box"],
-div:not([class]) 
-	{
+div:not([class]) {
 	border: solid 8px #faa;
 	color: #faa;
 	background-color: #fee;
@@ -17,7 +16,7 @@ div:not([class])
 	font-family: Verdata, Helvetica, sans-serif;
 	font-weight: bold;
 	font-size: 40px;
-	}
+}
 
 body > div:not([class]) {min-height: 200px}
 
@@ -29,37 +28,38 @@ body > div:not([class]) {min-height: 200px}
 	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
 	font-weight: normal;
 	text-align: left;
-	}
+}
 
 
 [class^="box"] > [class^="box"],
-div:not([class]) > div:not([class]) 
-	{
+div:not([class]) > div:not([class])	{
 	border-color: #e0e03d;
 	color: #e0e03d;
 	background-color: #ffe;
-	}
+}
 
 
 [class^="box"] > [class^="box"] > [class^="box"]	{
 	border-color: #aaf;
 	color: #aaf;
 	background-color: #eef;
-	}
+}
 
 [class^="box"] > [class^="box"] > [class^="box"] > [class^="box"]	{
 	border-color: #afa;
 	color: #afa;
 	background-color: #efe;
-	}
+}
 
 
 
 /* BOX Aを枠で囲まない設定 */
-.boxA	{border: none;
+.boxA	{
+  border: none;
 	background: none;
 	line-height: normal;
-	text-align: left}
+	text-align: left
+}
 
 
 
