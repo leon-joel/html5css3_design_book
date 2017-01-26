@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1-4 ボックスの横幅を指定する～ピクセル固定</title>
+  <link rel="stylesheet" href="../../sample/1/grid-guide.css">
+  <style>
+    .boxA {
+      border-width: thick;
+      border-style: dotted;
+      border-color: #83a4a8;
+    }
+    .boxA:after {
+      content: "";
+      border: solid thick indianred;  /* 可視化 */
+      display: block;
+      clear: both;
+    }
+
+    /* まずは右側Boxの幅を固定する ⇒ 右側に隙間が空く */
+    .box2 { float: left; width: 50%; line-height: normal; font-size: medium; }
+    .box3 { float: left; width: 300px; }
+
+    /* 左側boxのwidthを100%に ⇒ 当然縦に並ぶ */
+    .box5 { float: left; width: 100%; line-height: normal; font-size: medium;}
+    .box6 { float: left; width: 300px; opacity: 0.7; }
+
+    /* 左側boxのmargin-rightを右側boxのwidthに合わせる ⇒ 右側boxが右側にoverlapしてくる */
+    /* ※ネガティブマージン(margin-right or bottom)は後続要素のoverlapを許す ※margin-left/topとは全く振る舞いが異なるので注意!*/
+    /*   参考: http://coliss.com/articles/build-websites/operation/css/css-using-negative-margins.html*/
+    .box7 { float: left; width: 100%; margin-right: -300px; line-height: normal; font-size: medium;}
+    .box8 { float: left; width: 300px; opacity: 0.7; }
+
+    /* 左側boxにpadding-rightを入れ、box-sizing:border-box に ⇒ contentsが右側boxの下に隠れないように */
+    /* ※box-sizingはcssの方で元々border-boxがセットされていたので上の状態と変わらない */
+    .box9 {
+      float: left; width: 100%;
+      margin-right: -300px; padding-right: 300px;
+      -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+      line-height: normal; font-size: medium;}
+    .box10 { float: left; width: 300px; opacity: 0.7; }
+  </style>
+</head>
+
+<body>
+
+<div class="box1">BOX1</div>
+
+<div class="boxA">
+  <div class="box2">BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2 BOX2</div>
+  <div class="box3">BOX3</div>
+</div>
+<div class="boxA">
+  <div class="box5">BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5 BOX5</div>
+  <div class="box6" style="border-color: darkgreen;">BOX6</div>
+</div>
+<div class="boxA">
+  <div class="box7">BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7 BOX7</div>
+  <div class="box8" style="border-color: saddlebrown;">BOX8</div>
+</div>
+<div class="boxA">
+  <div class="box9">BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 BOX9 </div>
+  <div class="box10" style="border-color: yellowgreen;">BOX10</div>
+</div>
+
+<div class="box4">BOX4 SUF</div>
+
+<!-- 何もスタイルが適用されないdiv要素: 幅は画面一杯、高さはcontentsにfit ※テキストなしだと高さは0に-->
+<!-- ※テキストがBox横幅-->
+<div class="test" >texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext </div>
+
+
+</body>
