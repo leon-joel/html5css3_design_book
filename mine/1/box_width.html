@@ -31,6 +31,11 @@
     .box1 { float: left; width: 50%;}
     .box2 { float: left; width: 30%; }
     .box3 { float: left; width: 20%; }
+
+    /* カラム落ちを利用したレイアウト */
+    .box5 { float: left; width: 50%;}
+    .box6 { float: left; width: 50%; }
+    .box7 { float: left; width: 100%; }  /* 上の段に入りきらないので下の段に押し出される */
   </style>
 </head>
 
@@ -41,6 +46,12 @@
   <div class="box2">BOX2</div>
   <div class="box3">BOX3</div>
 </div>
+<div class="boxA">
+  <div class="box5">BOX5</div>
+  <div class="box6">BOX6</div>
+  <div class="box7">BOX7カラム落ちボックス</div>
+</div>
+
 <div class="box4">BOX4 SUF</div>
 
 <!-- 何もスタイルが適用されないdiv要素: 幅は画面一杯、高さはcontentsにfit ※テキストなしだと高さは0に-->
