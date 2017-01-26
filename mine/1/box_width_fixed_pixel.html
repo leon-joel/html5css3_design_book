@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1-4 ボックスの横幅を指定する～ピクセル固定</title>
+  <link rel="stylesheet" href="../../sample/1/grid-guide.css">
+  <style>
+    .boxA {
+      border-width: thick;
+      border-style: dotted;
+      border-color: #83a4a8;
+    }
+    .boxA:after {
+      content: "";
+      border: solid thick indianred;  /* 可視化 */
+      display: block;
+      clear: both;
+    }
+
+    /* まずは左側のBoxの幅を固定する ⇒ 右側のboxの幅が中途半端になる */
+    .box2 { float: left; width: 300px; }
+    .box3 { float: left; width: 50%; line-height: normal; font-size: medium}
+
+    /* 右側boxのfloatを解除し、幅をautoに ⇒ 右側boxの裏に入り込み横幅一杯に広がる */
+    /*                                      ※テキストはboxの裏に入り込まない仕様 */
+    .box5 { float: left; width: 300px; opacity: 0.7 }
+    .box6 { float: none; width: auto; line-height: normal; font-size: medium}
+
+    /* 右側boxのmerginを左側boxのwidthに合わせる ⇒ 右側boxが右端までピッタリ入る */
+    .box7 { float: left; width: 300px; }
+    .box8 { float: none; width: auto; margin-left: 300px; line-height: normal; font-size: medium}
+  </style>
+</head>
+
+<body>
+
+<div class="box1">BOX1</div>
+
+<div class="boxA">
+  <div class="box2">BOX2</div>
+  <div class="box3">BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3</div>
+</div>
+<div class="boxA">
+  <div class="box5">BOX5</div>
+  <div class="box6" style="border-color: darkgreen;">BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3</div>
+</div>
+<div class="boxA">
+  <div class="box7">BOX7</div>
+  <div class="box8" style="border-color: saddlebrown;">BOX8 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX6 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3 BOX3</div>
+</div>
+
+<div class="box4">BOX4 SUF</div>
+
+<!-- 何もスタイルが適用されないdiv要素: 幅は画面一杯、高さはcontentsにfit ※テキストなしだと高さは0に-->
+<!-- ※テキストがBox横幅-->
+<div class="test" >texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext </div>
+
+
+</body>
