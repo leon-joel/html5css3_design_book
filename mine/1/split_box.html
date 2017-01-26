@@ -18,12 +18,16 @@
     /* boxを均等に横並びに */
     .box1 {
       float: left;
-      width: 50%;
+      width: 33.3333%;
     }
     .box2 {
       float: left;
-      width: 50%;
+      width: 33.3333%;
       border-color: #00a0e9;  /* cssによって上書きされる ※あちらの方が詳細度が上なのか */
+    }
+    .box3 {
+      float: left;
+      width: 33.33%;
     }
   </style>
 
@@ -33,6 +37,7 @@
 <div class="boxA">
   <div class="box1">BOX1</div>
   <div class="box2" style="border-color: #00ffff">BOX2</div>
+  <div class="box3">BOX3</div>
 </div>
 
 </body>
