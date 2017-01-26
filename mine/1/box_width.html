@@ -36,6 +36,16 @@
     .box5 { float: left; width: 50%;}
     .box6 { float: left; width: 50%; }
     .box7 { float: left; width: 100%; }  /* 上の段に入りきらないので下の段に押し出される */
+
+    /* 高さの揃わないBOXのカラム落ち */
+    .box8  { float: left; width: 50%; height: 280px}
+    .box9  { float: left; width: 50%; }
+    .box10 { float: left; width: 50%; }  /* box9の下にスッポリはまる */
+
+    /* 高さの揃わないBOXをカラム落ちで左詰めでレイアウト by clearfix*/
+    .box11 { float: left; width: 50%; height: 280px}
+    .box12 { float: left; width: 50%; }
+    .box13 { float: left; width: 50%; }
   </style>
 </head>
 
@@ -50,6 +60,21 @@
   <div class="box5">BOX5</div>
   <div class="box6">BOX6</div>
   <div class="box7">BOX7カラム落ちボックス</div>
+</div>
+<div class="boxA">
+  <div class="box8">BOX8</div>
+  <div class="box9">BOX9</div>
+  <div class="box10">BOX10</div>
+</div>
+
+<div class="boxA">
+  <div class="boxA">
+    <!-- clearfixを使って、box13を左端にレイアウトする -->
+    <!-- ※clearfixを使わずとも、box13をclear:bothにすれば同じ結果になる -->
+    <div class="box11">BOX11</div>
+    <div class="box12">BOX12</div>
+  </div>
+  <div class="box13">BOX13</div>
 </div>
 
 <div class="box4">BOX4 SUF</div>
