@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1-3 ボックスを分割する</title>
+  <link rel="stylesheet" href="../../sample/1/grid-guide.css">
+  <style>
+    .boxA {
+      border: solid thick blueviolet;
+    }
+    /* clearfix */
+    .boxA:after {
+      content: "";
+      border: solid thin darkred; /* 存在が見えるようにborderを可視化 */
+      display: block;
+      clear: both;
+    }
+    /* boxを均等に横並びに */
+    .box1 {
+      float: left;
+      width: 50%;
+    }
+    .box2 {
+      float: left;
+      width: 50%;
+      border-color: #00a0e9;  /* cssによって上書きされる ※あちらの方が詳細度が上なのか */
+    }
+  </style>
+
+</head>
+<body>
+
+<div class="boxA">
+  <div class="box1">BOX1</div>
+  <div class="box2" style="border-color: #00ffff">BOX2</div>
+</div>
+
+</body>
+</html>
