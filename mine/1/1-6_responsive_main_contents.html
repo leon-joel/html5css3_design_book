@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1-6 レスポンシブWEBデザインを設定する - レスポンシブWEBデザインの応用</title>
+  <link rel="stylesheet" href="../../sample/1/grid-guide-rwd.css"/>
+  <style>
+    .boxA {
+      border-width: thick;
+      border-style: dotted;
+      border-color: #83a4a8;
+    }
+
+    /* ウィンドウサイズが大きい時にだけ有効 */
+    @media (min-width: 768px) {
+      .boxA:after {
+        content: "";
+        border:  solid thick indianred; /* 可視化 */
+        display: block;
+        clear:   both;
+      }
+      .box4 {
+        float: left;
+        width: 20%;
+      }
+
+      .boxB {
+        float: left;
+        width: 80%;
+      }
+      .box2 {
+        float: right;
+        width: 75%;
+      }
+      .box3 {
+        float: left;
+        width: 25%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<div class="box1">BOX1</div>
+<div class="boxA">
+  <div class="boxB">
+    <div class="box2">BOX2 MAIN CONTENTS</div>
+    <div class="box3">BOX3 MENU</div>
+  </div>
+  <div class="box4">BOX4</div>
+</div>
+</body>
+</html>
