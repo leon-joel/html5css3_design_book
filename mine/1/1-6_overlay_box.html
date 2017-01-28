@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1-6 レスポンシブWEBデザインを設定する - ボックスを重ねてレイアウトする（バッジのレイアウト）</title>
+  <link rel="stylesheet" href="../../sample/1/grid-guide.css"/>
+  <style>
+    /* 見栄えの設定 */
+    .boxA {
+      border-width: thick;
+      border-style: dotted;
+      border-color: #83a4a8;
+    }
+    /* clearfix */
+    /*.boxA:after {*/
+      /*content: "";*/
+      /*border: solid thick indianred;  !* 可視化 *!*/
+      /*display: block;*/
+      /*clear: both;*/
+    /*}*/
+
+    .boxA .box1 {
+      border: solid 8px #e0e03d;
+      background-color: #ffffee;
+      line-height: 200px;
+    }
+    .boxA .box2 {
+      border: solid 8px #eb6877;
+      -webkit-border-radius:; -moz-border-radius:; border-radius: 30%;
+      background-color: #ffc2c9;
+      line-height: 100px;
+      color: mediumvioletred;
+      opacity: 0.7;
+    }
+
+
+    /* 親のbox */
+    .boxA { position: relative;}
+
+    /* 子のbox （バッジのレイアウト） */
+    .box2 {
+      /* 親に対する相対位置で場所を指定 */
+      /* ★他のboxからは存在しないものとして扱われる */
+      position: absolute;
+      /*top: 160px;*/
+      /*left: 60px;*/
+      bottom: -30px;
+      right: -20px;
+    }
+  </style>
+</head>
+<body>
+<div class="boxA">
+  <div class="box1">BOX1</div>
+  <div class="box2">BOX2</div>
+  <div>box3</div>
+</div>
+<div class="test" >texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext </div>
+
+</body>
+</html>
