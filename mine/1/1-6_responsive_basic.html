@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1-6 レスポンシブWEBデザインを設定する - レスポンシブWEBデザインの基本</title>
+  <link rel="stylesheet" href="../../sample/1/grid-guide.css"/>
+  <style>
+    .boxA {
+      border-width: thick;
+      border-style: dotted;
+      border-color: #83a4a8;
+    }
+
+    /* ウィンドウサイズが大きい時にだけ有効 */
+    @media (min-width: 768px) {
+      .boxA:after {
+        content: "";
+        border:  solid thick indianred; /* 可視化 */
+        display: block;
+        clear:   both;
+      }
+
+      .box2 {
+        float: left;
+        width: 70%;
+      }
+
+      .box3 {
+        float: left;
+        width: 30%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box1">BOX1</div>
+  <div class="boxA">
+    <div class="box2">BOX2</div>
+    <div class="box3">BOX3</div>
+  </div>
+</body>
+</html>
