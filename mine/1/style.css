@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+body {
+  /* このフォント指定がない場合、OS X環境の Safari では明朝系のフォントで表示されるとのこと */
+  font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
+}
