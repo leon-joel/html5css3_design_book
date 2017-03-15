@@ -19,6 +19,12 @@ div:not([class])
 	font-size: 40px;
 	}
 
+/* clearfix可視化 */
+.boxA:after {
+  border: dashed thin red;
+}
+
+
 body > div:not([class]) {min-height: 200px}
 
 [class^="box"] > *:not([class^="box"]) {
@@ -53,6 +59,10 @@ div:not([class]) > div:not([class])
 	background-color: #efe;
 	}
 
+/* clearfix可視化 */
+.menu ul:after {
+  border: dotted thin orangered;
+}
 
 
 
