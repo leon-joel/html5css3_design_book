@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body	{font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
+
+/* 768px以上で有効 : ボックスを横並びに */
+@media (min-width: 768px) {
+
+  /* BOX3とBOX4を横に並べる設定 */
+  .boxA:after	{content: "";
+    display: block;
+    border: dashed thin red;	/* clearfix可視化 */
+    clear: both}
+
+  .box3	{float: left;
+    width: 70%}
+
+  .box4	{float: left;
+    width: 30%}
+
+}
