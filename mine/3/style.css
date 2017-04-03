@@ -30,7 +30,7 @@ body	{font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
 }
 .menu li a {
   display: block;   /* リンクの範囲を横幅一杯まで広げる */
-  padding: 5px;     /* リンク範囲を5px広げる */
+  padding: 15px;     /* リンク範囲を5px広げる */
 
   color: black;
   font-size: 14px;
@@ -51,6 +51,11 @@ body	{font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
   margin-top: 0;   /* 他のパーツと横並びにした時に頭が揃うようにするため top は0 にそろえる */
   margin-bottom: 20px;
   /*フォントサイズはデフォルト(16px)でOK*/
+}
+
+.kiji img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* サイド（縦並び）メニュー */
@@ -141,6 +146,8 @@ body	{font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
   color: dimgray;
   font-size: 14px;
 }
+
+.box2 { background-color: #7cbac1; }
 
 /* 768px以上で有効 : ボックスを横並びに */
 @media (min-width: 768px) {
