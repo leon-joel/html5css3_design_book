@@ -136,6 +136,11 @@ body	{font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
   font-size: 18px;
 }
 
+.copyright p {
+  margin: 0;
+  color: dimgray;
+  font-size: 14px;
+}
 
 /* 768px以上で有効 : ボックスを横並びに */
 @media (min-width: 768px) {
