@@ -54,12 +54,12 @@ body	{font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
 }
 
 /* サイド（縦並び）メニュー */
+.sidemenu { margin-bottom: 30px; }
 .sidemenu ul {
   margin: 0;
   padding: 0;
   list-style: none;   /* padding:0 だけでリストのマークは消えるようだが */
 }
-
 .sidemenu li a {
   display: block;   /* リンクの範囲を横幅一杯まで広げる */
   padding: 5px;     /* リンク範囲を5px広げる */
@@ -68,10 +68,74 @@ body	{font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
   font-size: 14px;
   text-decoration: none;  /* リンクの下線を非表示に */
 }
-
 .sidemenu li a:hover {
   background-color: #eeeeee;  /* 背景をグレーに */
 }
+.sidemenu h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: dotted 2px #dddddd;
+  color: #666666;
+  font-size: 18px;
+}
+
+/* おすすめ記事メニュー */
+.osusume { margin-bottom: 30px; }
+.osusume ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;   /* padding:0 だけでリストのマークは消えるようだが */
+}
+
+.osusume li a {
+  display: block;   /* リンクの範囲を横幅一杯まで広げる */
+  padding: 5px;     /* リンク範囲を5px広げる */
+
+  color: black;
+  font-size: 14px;
+  text-decoration: none;  /* リンクの下線を非表示に */
+}
+
+.osusume li a:hover {
+  background-color: #eeeeee;  /* 背景をグレーに */
+}
+
+.osusume h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: dotted 2px #dddddd;
+  color: #666666;
+  font-size: 18px;
+}
+
+/* 人気の記事メニュー */
+.ninki ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;   /* padding:0 だけでリストのマークは消えるようだが */
+}
+
+.ninki li a {
+  display: block;   /* リンクの範囲を横幅一杯まで広げる */
+  padding: 5px;     /* リンク範囲を5px広げる */
+
+  color: black;
+  font-size: 14px;
+  text-decoration: none;  /* リンクの下線を非表示に */
+}
+
+.ninki li a:hover {
+  background-color: #eeeeee;  /* 背景をグレーに */
+}
+
+.ninki h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: dotted 2px #dddddd;
+  color: #666666;
+  font-size: 18px;
+}
+
 
 /* 768px以上で有効 : ボックスを横並びに */
 @media (min-width: 768px) {
