@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Layout</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 0.25fr 10px 0.75fr;
+      grid-template-rows: auto 20px auto 20px auto 20px auto;
+      text-align: center;
+
+      padding: 20px;
+      font-size: 2em;
+    }
+    .header {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      background: #69F;
+    }
+    .sidebar {
+      grid-column-start: 1;
+      grid-row-start: 3;
+      grid-row-end: 6;
+      background: #6F9;
+    }
+    .main {
+      grid-column-start: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      background: #F69;
+      height:400px;
+    }
+    .extra {
+      grid-column-start: 3;
+      grid-row-start: 5;
+      background: #9F6;
+    }
+    .footer {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 7;
+      background: #F96;
+    }
+  </style>
+</head>
+<body>
+<div class="grid-container">
+  <div class="grid-element header">Header</div>
+  <div class="grid-element sidebar">Sidebar</div>
+  <div class="grid-element main">Main Content</div>
+  <div class="grid-element extra">Extra Info</div>
+  <div class="grid-element footer">Footer</div>
+</div>
+</body>
+</html>
