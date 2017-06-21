@@ -14,32 +14,30 @@
       font-size: 2em;
     }
     .header {
-      grid-column-start: 1;
-      grid-column-end: 4;
+      /*grid-column-start: 1;*/
+      /*grid-column-end: 4;*/
+      grid-column: 1/4;   /* 上のショートハンド記法 http://qiita.com/kura07/items/e633b35e33e43240d363 */
       background: #69F;
     }
     .sidebar {
-      grid-column-start: 1;
-      grid-row-start: 3;
-      grid-row-end: 6;
+      grid-column: 1;     /* endが隣のLINEの場合はend省略可能 */
+      grid-row: 3 / span 3; /* Line番号の代わりにSpanでも指定可能 */
       background: #6F9;
     }
     .main {
-      grid-column-start: 3;
-      grid-row-start: 3;
-      grid-row-end: 4;
+      grid-column: 3;
+      grid-row: 3;
       background: #F69;
       height:400px;
     }
     .extra {
-      grid-column-start: 3;
-      grid-row-start: 5;
+      grid-column: 3;
+      grid-row: 5;
       background: #9F6;
     }
     .footer {
-      grid-column-start: 1;
-      grid-column-end: 4;
-      grid-row-start: 7;
+      grid-column: 1/4;
+      grid-row: 7;
       background: #F96;
     }
   </style>
