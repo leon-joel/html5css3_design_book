@@ -8,36 +8,39 @@
       display: grid;
       grid-template-columns: 0.25fr 10px 0.75fr;
       grid-template-rows: auto 20px auto 20px auto 20px auto;
+      grid-template-areas:
+        "header  header header"
+        "....... ...... ......"
+        "sidebar ...... main"
+        "sidebar ...... ...."
+        "sidebar ...... extra"
+        "....... ...... ......"
+        "footer  footer footer";
+
       text-align: center;
 
       padding: 20px;
       font-size: 2em;
     }
     .header {
-      /*grid-column-start: 1;*/
-      /*grid-column-end: 4;*/
-      grid-column: 1/4;   /* 上のショートハンド記法 http://qiita.com/kura07/items/e633b35e33e43240d363 */
+      grid-area: header;
       background: #69F;
     }
     .sidebar {
-      grid-column: 1;     /* endが隣のLINEの場合はend省略可能 */
-      grid-row: 3 / span 3; /* Line番号の代わりにSpanでも指定可能 */
+      grid-area: sidebar;
       background: #6F9;
     }
     .main {
-      grid-column: 3;
-      grid-row: 3;
+      grid-area: main;
       background: #F69;
       height:400px;
     }
     .extra {
-      grid-column: 3;
-      grid-row: 5;
+      grid-area: extra;
       background: #9F6;
     }
     .footer {
-      grid-column: 1/4;
-      grid-row: 7;
+      grid-area: footer;
       background: #F96;
     }
   </style>
