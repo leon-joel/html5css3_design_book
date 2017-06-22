@@ -1,0 +1,39 @@
+header {
+  display:         flex;
+  justify-content: space-between; /* 要素間に均等にスペースを空ける ※両端にはスペースを入れない */
+  padding:         10px;
+}
+
+ul {
+  display:     flex;
+  align-items: center; /* 縦位置: 中央 */
+}
+
+main {
+  display:   flex;
+  flex-wrap: wrap;
+  padding:   10px;
+}
+
+main div.animal {
+  width:  calc(33.3% - 10px); /* 3カラム */
+  margin: 5px;
+}
+
+
+/* レスポンシブ対応 */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column; /* 縦方向にflowする */
+    align-items: center;    /* これを入れないとboxが横に引き延ばされてしまう */
+  }
+  main div.animal {
+    width: calc(50% - 10px);  /* 2カラム */
+  }
+}
+
+@media (max-width: 400px) {
+  main div.animal {
+    width: calc(100% - 10px);  /* 1カラム */
+  }
+}
